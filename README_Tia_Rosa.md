@@ -1,10 +1,10 @@
 # Sistema de Gerenciamento para Coffee Shops Tia Rosa
 
-Este repositório contém um sistema completo de gerenciamento de pedidos, cardápio e fidelização de clientes, desenvolvido inteiramente em Python, com base nas necessidades operacionais da cafeteria fictícia *Coffee Shops Tia Rosa*. O sistema foi pensado para ser simples, funcional, claro e acessível a colaboradores com pouca familiaridade com tecnologia.
+Este repositório contém um sistema de gerenciamento de pedidos, cardápio e fidelização de clientes, desenvolvido em Python, com base nas necessidades operacionais da cafeteria fictícia *Coffee Shops Tia Rosa*. O sistema foi pensado para ser simples e funcional para colaboradores com pouca familiaridade com tecnologia.
 
 ## Objetivo
 
-Desenvolver um sistema autoral, funcional e didático, que permita a simulação do atendimento e da gestão diária da cafeteria, utilizando exclusivamente recursos da linguagem Python padrão.
+Desenvolver um sistema autoral e funcional, que permite a simulação do atendimento e da gestão diária da cafeteria, utilizando recursos da linguagem Python.
 
 ## Funcionalidades Implementadas
 
@@ -19,9 +19,9 @@ Desenvolver um sistema autoral, funcional e didático, que permita a simulação
 ## Tecnologias Utilizadas
 
 - Python 3 (sem bibliotecas externas)
-- Bibliotecas padrão: `json`, `datetime`, `os`, `random`, `collections`
+- Bibliotecas padrão: `json`
 
-Obs: o uso da biblioteca `colorama` é opcional, apenas para exibição colorida no terminal. O sistema também funciona normalmente sem ela. 
+Obs: o uso da biblioteca `colorama` é opcional, o sistema também funciona normalmente sem ela. 
 
 ## Estrutura
 
@@ -35,9 +35,10 @@ O sistema foi organizado em funções e classes para manter clareza e escalabili
 
 ## Instruções de Execução
 
-1. Certifique-se de ter o Python 3 instalado em seu computador.
+1. Certifique-se de ter o Python instalado em seu computador.
 2. Baixe o arquivo do sistema.
 3. Execute o script pelo terminal com o comando:
 
 ```bash
 python nome_do_arquivo.py
+
