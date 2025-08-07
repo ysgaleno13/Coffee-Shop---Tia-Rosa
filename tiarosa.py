@@ -21,12 +21,12 @@ except ImportError:
     Style = NoColor()
 
 
-# --- Nossas Classes: O Coração da Cafeteria ---
+# --- Classes: O Coração da Cafeteria ---
 # Aqui consigo organizar as informações principais, como se fossem fichas.
 
 class ItemCardapio:
     """
-    Representa um quitute ou bebida do nosso cardápio da Tia Rosa.
+    Representa um alimento ou bebida do nosso cardápio da Tia Rosa.
     Registra o nome, preço, categoria, ingredientes, promoção e o que é mais vendido.
    
     """
@@ -60,7 +60,7 @@ class Comanda:
         self.hora_do_pedido = datetime.now() # A hora exata que a comanda foi fechada
         self.valor_total = sum(item.preco for item in itens_da_comanda) # Soma o preço de tudo
 
-# --- Nosso Histórico de Dados ---
+# --- Histórico de Dados ---
 # Essas listas guardam tudo enquanto o sistema tá ligado.
 # Depois é só salvar em arquivos pra não perder nada.
 cardapio_da_tia_rosa = []
@@ -90,13 +90,13 @@ OS_COMBOS_DA_CIDADE = {
     },
    
 	"Doce da Glória": {
-        "itens": ["Quindim ou Fatia de Torta de Limão", "Café Expresso"],
+        "itens": ["Salgado ou Fatia de Torta de Limão", "Café Expresso"],
         "promocao": "Pra quem merece um mimo da tarde!",
         "preco_base": 0
     },
    	
 	"Expresso da Lapa": {
-        "itens": ["Café Expresso", "Mini Sanduíche de Pão Francês com Queijo Minas", "Pastelzinho de Forno Recheado"],
+        "itens": ["Café Expresso", "Pão Francês com Queijo Minas", "Pastel Recheado"],
         "promocao": "Um combo rápido pra quem tem pressa (mas não abre mão do sabor)!",
         "preco_base": 0
     },
@@ -212,7 +212,7 @@ def carregar_tudo():
         except Exception as e:
             print(Fore.RED + f"Erro ao carregar os clientes: {e}")
 
-    # Tenta carregar as comandas (aqui é mais complexo, precisa achar o cliente e os produtos)
+    # Tenta carregar as comandas (aqui é mais complexo, é preciso achar o cliente e os produtos)
     if os.path.exists(ARQUIVO_COMANDAS):
         try:
             with open(ARQUIVO_COMANDAS, 'r', encoding='utf-8') as f:
@@ -267,10 +267,10 @@ def _popular_cardapio_inicial():
         # Itens genéricos para combos que podem ter variações
         cardapio_da_tia_rosa.append(ItemCardapio("Pão na Chapa ou Pão com Ovo Frito na Manteiga", 8.00, "Salgado", ["Pão", "Manteiga", "Ovo"]))
         cardapio_da_tia_rosa.append(ItemCardapio("Suco Natural da Casa", 7.50, "Bebida", ["Frutas da estação"]))
-        cardapio_da_tia_rosa.append(ItemCardapio("Torradas Artesanais com Requeijão", 6.00, "Salgado", ["Pão", "Requeijão"]))
+        cardapio_da_tia_rosa.append(ItemCardapio("Torradas com Requeijão", 6.00, "Salgado", ["Pão", "Requeijão"]))
         cardapio_da_tia_rosa.append(ItemCardapio("Salada de Frutas", 5.00, "Doce", ["Frutas frescas"]))
         cardapio_da_tia_rosa.append(ItemCardapio("Fatia de Torta de Limão", 8.50, "Doce", ["Bolo no Pote", "Torta de Limão"]))
-        cardapio_da_tia_rosa.append(ItemCardapio("Mini Sanduíche de Pão Francês com Queijo Minas", 6.50, "Salgado", ["Pão francês", "Queijo Minas"]))
+        cardapio_da_tia_rosa.append(ItemCardapio("Pão Francês com Queijo Minas", 6.50, "Salgado", ["Pão francês", "Queijo Minas"]))
         cardapio_da_tia_rosa.append(ItemCardapio("Pastel", 4.00, "Salgado", ["Massa", "Recheio"]))
         cardapio_da_tia_rosa.append(ItemCardapio("Vitamina Fitness", 9.00, "Bebida", ["Banana", "Aveia", "Leite"]))
         cardapio_da_tia_rosa.append(ItemCardapio("Biscoito ou Bolo da Casa", 5.50, "Doce", ["Biscoito", "Bolo"]))
@@ -291,7 +291,7 @@ def _popular_cardapio_inicial():
             if item_obj:
                 preco_calculado += item_obj.preco
             else:
-                # Se um item do combo não existe, a gente avisa e não calcula o preço
+                # Se um item do combo não existe, o sistema avisa e não calcula o preço
                 print(Fore.YELLOW + f"Aviso: Item '{item_nome}' do combo '{nome_combo}' não encontrado no cardápio. Preço do combo pode estar incorreto.")
                 preco_calculado = 0.0 # Zera pra não dar preço errado
                 break
@@ -302,7 +302,7 @@ def _popular_cardapio_inicial():
 
 def incluir_item_no_cardapio():
     """
-    Deixa a gente adicionar um novo item ao cardápio da cafeteria.
+    Deixa adicionar um novo item ao cardápio da cafeteria.
     Pede o nome, ingredientes, preço e categoria.
     """
     print(Fore.BLUE + "\n--- BOTA MAIS UM SABOR NO CARDÁPIO! ---")
@@ -716,3 +716,4 @@ def iniciar_cafeteria():
 if __name__ == "__main__":
     # E agora, vamos abrir a cafeteria!
     iniciar_cafeteria()
+
